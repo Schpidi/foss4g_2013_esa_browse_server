@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>ESA User Services powered by Open Source</title>
+
+        <meta name="description" content="This presentation introduces the Browse Server of ESA's new User Services infrastructure (ngEO) serving browse images via OGC's WMTS and WMS standards using GDAL, MapServer, EOxServer, and MapCache">
+        <meta name="author" content="Stephan Meissl">
+        <meta name="author" content="Thomas Bonfort">
+        <meta name="author" content="Fabian Schindler">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+
+                <section>
+                    <h1>ESA User Services powered by Open Source</h1>
+                    <p>Created by:</p>
+                    <p>Stephan Meissl, Thomas Bonfort, and Fabian Schindler</p>
+                    
+                    <aside class="notes">
+                        Notes go here
+                    </aside>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Who are we?</h2>
+                    </section>
+                    <section>
+                        <h2>Stephan Meissl, Fabian Schindler - EOX IT Services GmbH</h2>
+                    </section>
+                    <section>
+                        <h2>Thomas Bonfort - Terriscope EURL</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Introduction to ESA's new User Services infrastructure called ngEO</h2>
+                    </section>
+                    <section>
+                        <h2>Architecture, ...</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>ngEO Browse Server</h2>
+                    </section>
+                    <section>
+                        <h2>OGC's WMTS and WMS standards</h2>
+                    </section>
+                    <section>
+                        <h2>Entirely Open Source Software: GDAL, MapServer, EOxServer, and MapCache</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>MapCache Features/Enhancements</h2>
+                    </section>
+                    <section>
+                        <h2>Time dimension support</h2>
+                        <p>Visual representations of search results e.g. single browses or all browses in a specific time interval</p>
+                        <pre><code data-trim contenteditable>
+<tileset name="foss4g">
+    ...
+    <timedimension type="sqlite" default="2013">
+        <dbfile>/var/ngeob_data/mapcache.sqlite</dbfile>
+        <query>select strftime('%Y-%m-%dT%H:%M:%SZ',start_time)||'/'||strftime('%Y-%m-%dT%H:%M:%SZ',end_time) from time where source_id=:tileset and start_time&lt;=datetime(:end_timestamp,'unixepoch') and end_time&gt;=datetime(:start_timestamp,'unixepoch') and maxx&gt;=:minx and maxy&gt;=:miny and minx&lt;=:maxx and miny&lt;=:maxy order by end_time limit 100</query>
+    </timedimension>
+</tileset>
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Read-only functionality</h2>
+                        <pre><code data-trim contenteditable>
+<tileset name="foss4g">
+    ...
+    <read-only>true</read-only>
+</tileset>
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Configure max-cached-zoom</h2>
+                        <pre><code data-trim contenteditable>
+<tileset name="foss4g">
+    ...
+    <grid max-cached-zoom="8" out-of-zoom-strategy="reassemble">
+        WGS84
+    </grid>
+</tileset>
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Storage optimization e.g. detect_blank</h2>
+                        <pre><code data-trim contenteditable>
+<cache name="foss4g" type="sqlite3">
+    <dbfile>foss4g.sqlite</dbfile>
+    <detect_blank>true</detect_blank>
+</cache>
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Ingesting and pre-processing of browse images</h2>
+                    </section>
+                    <section>
+                        <h2>Geographic metadata</h2>
+                        <ul>
+                            <li>Footprint polygon</li>
+                            <li>Regular grid of tiepoints</li>
+                            <li>Pre-georeferenced images</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Optimizations</h2>
+                        <ul>
+                            <li>Footprint generation</li>
+                            <li>Re-projection</li>
+                            <li>Addition of alpha-channel</li>
+                            <li>Internal tilling</li>
+                            <li>Overviews</li>
+                            <li>Compression</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Conclusions / Outlook</h2>
+                    </section>
+                    <section>
+                        <h2>TBD</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Thank you for your Attention</h2>
+                    </section>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                keyboard: true,
+                touch: true,
+                overview: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
