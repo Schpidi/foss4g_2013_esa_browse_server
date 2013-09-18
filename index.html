@@ -43,48 +43,88 @@
                     <h1>ESA User Services powered by Open Source</h1>
                     <p>Created by:</p>
                     <p>Stephan Meissl, Thomas Bonfort, and Fabian Schindler</p>
-                    
+                    <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img style="margin: 15px 0px 0px 0px;" alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
+                    <p><small>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</small></p>
                     <aside class="notes">
-                        Notes go here
+                        Good afternoon everybody. 
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Outline</h2>
+                    <ul>
+                        <li class="fragment">ESA User Services - ngEO</li>
+                        <li class="fragment">Browse Server</li>
+                        <li class="fragment">MapCache</li>
+                        <li class="fragment">Preprocessing</li>
+                        <li class="fragment">Demonstration</li>
+                    </ul>
+                    <aside class="notes">
+                        We will start with an introduction to ESA's new User Services infrastructure called ngEO, short for Next Generation Earth Observation.
+                        It will be followed by a brief introduction of the design and functionality of the Browse Server component of ngEO.
+                        We will highlight some MapCache enhancements originating from ngEO.
+                        Last but not least we will try a Live Demonstration which our connection hopefully allows.
                     </aside>
                 </section>
 
                 <section>
                     <section>
-                        <h2>Who are we?</h2>
-                    </section>
-                    <section>
-                        <h2>Stephan Meissl, Fabian Schindler - EOX IT Services GmbH</h2>
-                    </section>
-                    <section>
-                        <h2>Thomas Bonfort - Terriscope EURL</h2>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h2>Introduction to ESA's new User Services infrastructure called ngEO</h2>
+                        <h2>ngEO</h2>
+                        <aside class="notes">
+                        </aside>
                     </section>
                     <section>
                         <h2>Architecture, ...</h2>
+                        <aside class="notes">
+                        </aside>
                     </section>
                 </section>
 
                 <section>
                     <section>
                         <h2>ngEO Browse Server</h2>
+                        <aside class="notes">
+                        </aside>
                     </section>
                     <section>
                         <h2>OGC's WMTS and WMS standards</h2>
+                        <aside class="notes">
+                        </aside>
                     </section>
                     <section>
-                        <h2>Entirely Open Source Software: GDAL, MapServer, EOxServer, and MapCache</h2>
+                        <h2>Browse Server Architecture</h2>
+                        <img src="./images/browse_server_architecture.png" alt="Browse Server Architecture" title="Browse Server Architecture"/>
+                        <aside class="notes">
+                            Entirely based on Open Source Software: GDAL, MapServer, EOxServer, and MapCache
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Preprocessing</h2>
+                        <ul>
+                            <li class="fragment">Geographic metadata</li>
+                            <ul class="fragment">
+                                <li>Footprint polygon</li>
+                                <li>Regular grid of tiepoints</li>
+                                <li>Pre-georeferenced images</li>
+                            </ul>
+                            <li class="fragment">Optimizations</li>
+                            <ul class="fragment">
+                                <li>Footprint generation</li>
+                                <li>Re-projection</li>
+                                <li>Addition of alpha-channel</li>
+                                <li>Internal tilling</li>
+                                <li>Overviews</li>
+                                <li>Compression</li>
+                            </ul>
+                        </ul>
+                        <aside class="notes">
+                        </aside>
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        <h2><a href="http://mapserver.org/trunk/en/mapcache/index.html">MapCache</a> Features/Enhancements</h2>
+                        <h2><a href="http://mapserver.org/trunk/en/mapcache/index.html">MapCache</a> Enhancements</h2>
                     </section>
                     <section>
                         <h2>Time dimension support</h2>
@@ -132,42 +172,76 @@
 
                 <section>
                     <section>
-                        <h2>Ingesting and pre-processing of browse images</h2>
+                        <h2>Demonstration</h2>
+                        <p>Live</p>
+                        <p><a href="http://foss4g.eox.at/time.html"><img src="./images/time.png" alt="Live Demonstration" title="Live Demonstration"/></a></p>
+                        <aside class="notes">
+                            We're trying a live demonstration using the shown URL.
+                            Btw. this is our Changing Times contribution to the Opening Up The Map challenge. Maybe you consider voting ;)
+                            We have some screen shots as backup in case the connection is too poor.
+                        </aside>
                     </section>
                     <section>
-                        <h2>Geographic metadata</h2>
-                        <ul>
-                            <li>Footprint polygon</li>
-                            <li>Regular grid of tiepoints</li>
-                            <li>Pre-georeferenced images</li>
-                        </ul>
+                        <h2>Time Slider</h2>
+                        <img style="height: 600px;" src="./images/screenshot_timeslider.png" alt="Time Slider" title="Time Slider"/>
+                        <aside class="notes">
+                            Note the time slider at the bottom of the page.
+                        </aside>
                     </section>
                     <section>
-                        <h2>Optimizations</h2>
-                        <ul>
-                            <li>Footprint generation</li>
-                            <li>Re-projection</li>
-                            <li>Addition of alpha-channel</li>
-                            <li>Internal tilling</li>
-                            <li>Overviews</li>
-                            <li>Compression</li>
-                        </ul>
+                        <h2>Entire Dataset</h2>
+                        <img style="height: 600px;" src="./images/screenshot_entiredataset.png" alt="Entire Dataset" title="Entire Dataset"/>
+                        <aside class="notes">
+                            This is a layer holding the entire dataset. Thus the time slider is disabled.
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Nottingham</h2>
+                        <img style="height: 600px;" src="./images/screenshot_nottingham_level10.png" alt="Nottingham" title="Nottingham"/>
+                        <aside class="notes">
+                            Let's zoom to Nottingham.
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>max-cached-zoom</h2>
+                        <img style="height: 600px;" src="./images/screenshot_nottingham_level12.png" alt="max-cached-zoom" title="max-cached-zoom"/>
+                        <aside class="notes">
+                            As you can see the image is still shown but no additional information is loaded (cf. max-cached-zoom).
+                        </aside>
                     </section>
                 </section>
 
                 <section>
-                    <section>
-                        <h2>Conclusions / Outlook</h2>
-                    </section>
-                    <section>
-                        <h2>TBD</h2>
-                    </section>
+                    <h2>Conclusions / Outlook</h2>
+                    <p>TBD</p>
                 </section>
 
                 <section>
-                    <section>
-                        <h2>Thank you for your Attention</h2>
-                    </section>
+                    <h2>Acknowledgement</h2>
+                    <a href="http://esa.int"><img src="./images/ESA_Logo.png" alt="European Space Agency - ESA" title="European Space Agency - ESA"/></a>
+                    <p>Funding has been provided by the European Space Agency (ESA) in the frame of the ngEO project.</p>
+                </section>
+
+                <section>
+                    <h2>Thank you for your Attention</h2>
+                    <br/>
+                    <ul>
+                        <li><a class="image" href="http://eox.at"><img style="margin: 0px 0px -8px 0px;"  src="./images/EOX_Logo.png" alt="EOX IT Services GmbH, Austria" title="EOX IT Services GmbH, Austria"/></a> @eox_a, office@eox.at</li>
+                        <ul>
+                            <li>Stephan Meissl @Schpidi</li>
+                            <li>Fabian Schindler @constantinius13</li>
+                        </ul>
+                        <br/>
+                        <li><a href="http://www.terriscope.fr">Terriscope EURL</a></li>
+                        <ul>
+                            <li>Thomas Bonfort @tbonfort</li>
+                        </ul>
+                    </ul>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img style="margin: 15px 0px 0px 0px;" alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
+                    <p><small>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</small></p>
                 </section>
 
             </div>
