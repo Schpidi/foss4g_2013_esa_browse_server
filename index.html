@@ -46,7 +46,12 @@
                     <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img style="margin: 15px 0px 0px 0px;" alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
                     <p><small>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</small></p>
                     <aside class="notes">
-                        Good afternoon everybody. 
+                        <p>Good afternoon everybody. We're going to present how the European Space Agency - ESA - is using Open Source Software for their new User Services.</p>
+                        <p>Let me briefly introduce the authors:</p>
+                        <ul>
+                            <li>Thmoas Bonfort - Famous for starting the MapCache project and core committer of MapServer.</li>
+                            <li>Fabian Schindler and myself from the small Austrian company EOX. Committer of MapServer and initiator of EOxServer.</li>
+                        </ul>
                     </aside>
                 </section>
 
@@ -59,10 +64,10 @@
                         <li class="fragment">Live Demonstration</li>
                     </ul>
                     <aside class="notes">
-                        We will start with an introduction to ESA's new User Services infrastructure called ngEO, short for Next Generation Earth Observation.
-                        It will be followed by a brief introduction of the design and functionality of the Browse Server component of ngEO.
-                        We will highlight some MapCache enhancements originating from ngEO.
-                        Last but not least we will try a Live Demonstration which our connection hopefully allows.
+                        <p>We will start with an introduction to ESA's new User Services infrastructure called ngEO, short for Next Generation Earth Observation.</p>
+                        <p>It will be followed by a brief introduction of the design and functionality of the Browse Server component of ngEO.</p>
+                        <p>We will highlight some MapCache enhancements originating from ngEO.</p>
+                        <p>Last but not least we will try a Live Demonstration which our connection hopefully allows.</p>
                     </aside>
                 </section>
 
@@ -75,6 +80,10 @@
                         <li class="fragment">Generic System usable for any Mission</li>
                     </ul>
                     <aside class="notes">
+                        <p>The main objective of the new ESA User Services is to provide a fully Online Operational Data Access Service.</p>
+                        <p>ESA provides access to satellite data from the European initiative GMES which stands for Global Monitoring for Environment &amp; Security or, as it is called nowadays, Copernicus as well as ESA's legacy missions like Envisat.</p>
+                        <p>Another objective of the new system is a Fully Centralised Configuration Management. I come back to that in a second.</p>
+                        <p>In summary ESA wants to develop a generic system that is easily usable for any mission.</p>
                     </aside>
                 </section>
 
@@ -83,11 +92,14 @@
                         <h2>ngEO Browse Server - Architecture</h2>
                         <img src="./images/browse_server_architecture.png" alt="Browse Server Architecture" title="Browse Server Architecture"/>
                         <aside class="notes">
-                            Entirely based on Open Source Software:
-                            * GDAL for raster processing
-                            * MapServer for OGC services support
-                            * EOxServer for Earth Observation extension
-                            * MapCache for extremely well performing WMTS and WMS access
+                            <p>Entirely based on Open Source Software:</p>
+                            <ul>
+                                <li>GDAL for raster processing</li>
+                                <li>MapServer for OGC services support</li>
+                                <li>EOxServer for Earth Observation extension</li>
+                                <li>MapCache for extremely well performing WMTS and WMS access</li>
+                            </ul>
+                            <p>TBD</p>
                         </aside>
                     </section>
                     <section>
@@ -101,7 +113,8 @@
                             <li class="fragment">Authorization from ngEO Web Server</li>
                         </ul>
                         <aside class="notes">
-                            Won't go into details of the OGC services. Please look it up there is plenty of information available.
+                            <p>TBD</p>
+                            <p>Won't go into details of the OGC services. Please look it up there is plenty of information available.</p>
                         </aside>
                     </section>
                     <section>
@@ -124,6 +137,7 @@
                             </ul>
                         </ul>
                         <aside class="notes">
+                            <p>TBD</p>
                         </aside>
                     </section>
                 </section>
@@ -131,6 +145,9 @@
                 <section>
                     <section>
                         <h2><a href="http://mapserver.org/trunk/en/mapcache/index.html">MapCache</a> Enhancements</h2>
+                        <aside class="notes">
+                            <p>TBD</p>
+                        </aside>
                     </section>
                     <section>
                         <h2>Time dimension support</h2>
@@ -144,6 +161,9 @@
 </tileset>
                         </code></pre>
                         <p>Visual representations of search results e.g. single browses or all browses in a specific time interval</p>
+                        <aside class="notes">
+                            <p>TBD</p>
+                        </aside>
                     </section>
                     <section>
                         <h2>Read-only functionality</h2>
@@ -154,6 +174,9 @@
 </tileset>
                         </code></pre>
                         <p>Absent tiles are considered empty instead of being sent to WMS for generation
+                        <aside class="notes">
+                            <p>TBD</p>
+                        </aside>
                     </section>
                     <section>
                         <h2>Configure max-cached-zoom</h2>
@@ -166,6 +189,9 @@
 </tileset>
                         </code></pre>
                         <p>Dynamically create high resolution tiles from lower resolution ones
+                        <aside class="notes">
+                            <p>TBD</p>
+                        </aside>
                     </section>
                     <section>
                         <h2>Storage optimization e.g. detect_blank</h2>
@@ -176,6 +202,9 @@
 </cache>
                         </code></pre>
                         <p>9 bytes stored per tile (hex quadruplet). Dynamically returned as a 132 byte PNG.
+                        <aside class="notes">
+                            <p>TBD</p>
+                        </aside>
                     </section>
                 </section>
 
@@ -185,38 +214,38 @@
                         <p>Live</p>
                         <p><a href="http://foss4g.eox.at/time.html"><img src="./images/time.png" alt="Live Demonstration" title="Live Demonstration"/></a></p>
                         <aside class="notes">
-                            We're trying a live demonstration using the shown URL.
-                            We need you all to disconnect your devices. That's for better connection and you to follow us.
-                            Btw. this is our Changing Times contribution to the Opening Up The Map challenge. Maybe you consider voting ;)
-                            We have some screen shots as backup in case the connection is too poor.
+                            <p>We're trying a live demonstration using the shown URL.</p>
+                            <p>We need you all to disconnect your devices. That's for better connection and you to follow us.</p>
+                            <p>Btw. this is our Changing Times contribution to the Opening Up The Map challenge. Maybe you consider voting ;)</p>
+                            <p>We have some screen shots as backup in case the connection is too poor.</p>
                         </aside>
                     </section>
                     <section>
                         <h2>Time Slider</h2>
                         <img style="height: 600px;" src="./images/screenshot_timeslider.png" alt="Time Slider" title="Time Slider"/>
                         <aside class="notes">
-                            Note the time slider at the bottom of the page.
+                            <p>Note the time slider at the bottom of the page.</p>p>
                         </aside>
                     </section>
                     <section>
                         <h2>Entire Dataset</h2>
                         <img style="height: 600px;" src="./images/screenshot_entiredataset.png" alt="Entire Dataset" title="Entire Dataset"/>
                         <aside class="notes">
-                            This is a layer holding the entire dataset. Thus the time slider is disabled.
+                            <p>This is a layer holding the entire dataset. Thus the time slider is disabled.</p>
                         </aside>
                     </section>
                     <section>
                         <h2>Nottingham</h2>
                         <img style="height: 600px;" src="./images/screenshot_nottingham_level10.png" alt="Nottingham" title="Nottingham"/>
                         <aside class="notes">
-                            Let's zoom to Nottingham.
+                            <p>Let's zoom to Nottingham.</p>
                         </aside>
                     </section>
                     <section>
                         <h2>max-cached-zoom</h2>
                         <img style="height: 600px;" src="./images/screenshot_nottingham_level12.png" alt="max-cached-zoom" title="max-cached-zoom"/>
                         <aside class="notes">
-                            As you can see the image is still shown but no additional information is loaded (cf. max-cached-zoom).
+                            <p>As you can see the image is still shown but no additional information is loaded (cf. max-cached-zoom).</p>
                         </aside>
                     </section>
                 </section>
@@ -228,12 +257,18 @@
                         <li class="fragment">New Functionality is feed back</li>
                         <li class="fragment">Time axis is important</li>
                     </ul>
+                    <aside class="notes">
+                        <p>TBD</p>
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Acknowledgement</h2>
                     <a href="http://esa.int"><img src="./images/ESA_Logo.png" alt="European Space Agency - ESA" title="European Space Agency - ESA"/></a>
                     <p>Funding has been provided by the European Space Agency (ESA) in the frame of the ngEO project.</p>
+                    <aside class="notes">
+                        <p>TBD</p>
+                    </aside>
                 </section>
 
                 <section>
@@ -256,6 +291,9 @@
                     <br/>
                     <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img style="margin: 15px 0px 0px 0px;" alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
                     <p><small>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</small></p>
+                    <aside class="notes">
+                        <p>TBD</p>
+                    </aside>
                 </section>
 
             </div>
