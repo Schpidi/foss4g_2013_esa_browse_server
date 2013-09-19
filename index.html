@@ -54,9 +54,8 @@
                     <h2>Outline</h2>
                     <ul>
                         <li class="fragment">ESA User Services - ngEO</li>
-                        <li class="fragment">Browse Server</li>
+                        <li class="fragment">ngEO Browse Server</li>
                         <li class="fragment">MapCache</li>
-                        <li class="fragment">Preprocessing</li>
                         <li class="fragment">Demonstration</li>
                     </ul>
                     <aside class="notes">
@@ -68,40 +67,47 @@
                 </section>
 
                 <section>
-                    <section>
-                        <h2>ngEO</h2>
-                        <aside class="notes">
-                        </aside>
-                    </section>
-                    <section>
-                        <h2>Architecture, ...</h2>
-                        <aside class="notes">
-                        </aside>
-                    </section>
+                    <h2>ESA User Services - ngEO</h2>
+                    <ul>
+                        <li class="fragment">Operational Fully Online Data Access Service</li>
+                        <li class="fragment">GMES and ESA Legacy Missions</li>
+                        <li class="fragment">Fully Centralised Configuration Management</li>
+                        <li class="fragment">Generic System usable for any PDGS</li>
+                    </ul>
+                    <aside class="notes">
+                    </aside>
                 </section>
 
                 <section>
                     <section>
-                        <h2>ngEO Browse Server</h2>
-                        <aside class="notes">
-                        </aside>
-                    </section>
-                    <section>
-                        <h2>OGC's WMTS and WMS standards</h2>
-                        <aside class="notes">
-                        </aside>
-                    </section>
-                    <section>
-                        <h2>Browse Server Architecture</h2>
+                        <h2>ngEO Browse Server - Architecture</h2>
                         <img src="./images/browse_server_architecture.png" alt="Browse Server Architecture" title="Browse Server Architecture"/>
                         <aside class="notes">
-                            Entirely based on Open Source Software: GDAL, MapServer, EOxServer, and MapCache
+                            Entirely based on Open Source Software:
+                            * GDAL for raster processing
+                            * MapServer for OGC services support
+                            * EOxServer for Earth Observation extension
+                            * MapCache for extremely well performing WMTS and WMS access
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>ngEO Browse Server</h2>
+                        <ul>
+                            <li class="fragment">Entirely based on Open Source Software</li>
+                            <li class="fragment">OGC's WMTS and WMS Standards</li>
+                            <li class="fragment">Configuration from ngEO Controller</li>
+                            <li class="fragment">Data ingested by ngEO FEED</li>
+                            <li class="fragment">Authentication using Shibboleth</li>
+                            <li class="fragment">Authorization from ngEO Web Server</li>
+                        </ul>
+                        <aside class="notes">
+                            Won't go into details of the OGC services. Please look it up there is plenty of information available.
                         </aside>
                     </section>
                     <section>
                         <h2>Preprocessing</h2>
                         <ul>
-                            <li class="fragment">Geographic metadata</li>
+                            <li class="fragment">Input Geographic Metadata</li>
                             <ul class="fragment">
                                 <li>Footprint polygon</li>
                                 <li>Regular grid of tiepoints</li>
@@ -177,6 +183,7 @@
                         <p><a href="http://foss4g.eox.at/time.html"><img src="./images/time.png" alt="Live Demonstration" title="Live Demonstration"/></a></p>
                         <aside class="notes">
                             We're trying a live demonstration using the shown URL.
+                            We need you all to disconnect your devices. That's for better connection and you to follow us.
                             Btw. this is our Changing Times contribution to the Opening Up The Map challenge. Maybe you consider voting ;)
                             We have some screen shots as backup in case the connection is too poor.
                         </aside>

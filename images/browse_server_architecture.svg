@@ -271,7 +271,7 @@
              y="-378.67896"
              x="459.92981"
              sodipodi:role="line"
-             id="tspan3560-8">CDS Web</tspan><tspan
+             id="tspan3560-8">ngEO Web</tspan><tspan
              id="tspan3951"
              y="-360.67896"
              x="459.92981"
@@ -589,7 +589,7 @@
            sodipodi:role="line"
            x="59.986923"
            y="-400.12433"
-           id="tspan6226">CDS View Server</tspan></text>
+           id="tspan6226">ngEO Browse Server</tspan></text>
       <path
          sodipodi:type="inkscape:offset"
          inkscape:radius="0.89285713"
