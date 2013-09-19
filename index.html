@@ -153,6 +153,7 @@
     <read-only>true</read-only>
 </tileset>
                         </code></pre>
+                        <p>Absent tiles are considered empty instead of being sent to WMS for generation
                     </section>
                     <section>
                         <h2>Configure max-cached-zoom</h2>
@@ -164,6 +165,7 @@
     </grid>
 </tileset>
                         </code></pre>
+                        <p>Dynamically create high resolution tiles from lower resolution ones
                     </section>
                     <section>
                         <h2>Storage optimization e.g. detect_blank</h2>
@@ -173,6 +175,7 @@
     <detect_blank>true</detect_blank>
 </cache>
                         </code></pre>
+                        <p>9 bytes stored per tile (hex quadruplet). Dynamically returned as a 132 byte PNG.
                     </section>
                 </section>
 
